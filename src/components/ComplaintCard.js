@@ -18,6 +18,13 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import HelpIcon from '@material-ui/icons/Help';
+import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline';
+import Badge from '@material-ui/core/Badge';
+import NotInterestedIcon from '@material-ui/icons/NotInterested';
+import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
+import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
+import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
+import SplitButton from './SplitButton';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -36,6 +43,9 @@ const useStyles = makeStyles(theme => ({
   },
   avatar: {
     backgroundColor: red[500]
+  },
+  badge: {
+    marginTop: '15px'
   }
 }));
 
@@ -56,21 +66,41 @@ export default function ComplaintViewCard(props) {
   return (
     <Card className={classes.card}>
       <CardHeader
-        avatar={<Avatar className={classes.avatar}>{props.agent}</Avatar>}
+        avatar={
+          <Avatar className={classes.avatar}>
+            {iconByMedium(props.medium)}
+          </Avatar>
+        }
         action={
           <IconButton arial-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title={
-          <IconButton arial-label="settings">
-            {iconByMedium(props.medium)}
-          </IconButton>
-        }
+        title={props.medium}
       ></CardHeader>
       <CardContent>
-        <Typography variant="body2">{props.complaintText}</Typography>
+        <Typography variant="body3" color="textSecondary" component="p">
+          {props.complaintText}
+        </Typography>
+        <Badge badgeContent={12} color="primary" className={classes.badge}>
+          <ViewHeadlineIcon />
+        </Badge>
       </CardContent>
+      <CardActions>
+        <IconButton>
+          <NotInterestedIcon />
+        </IconButton>
+        <IconButton>
+          <EmojiEmotionsIcon />
+        </IconButton>
+        <IconButton>
+          <SentimentDissatisfiedIcon />
+        </IconButton>
+        <IconButton>
+          <SentimentVeryDissatisfiedIcon />
+        </IconButton>
+        <SplitButton />
+      </CardActions>
     </Card>
   );
 }

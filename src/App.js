@@ -25,6 +25,7 @@ const renderCards = () =>
   ].map(x => (
     <>
       <br />
+
       <ComplaintViewCard {...x} />
     </>
   ));
