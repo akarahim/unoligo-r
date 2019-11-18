@@ -77,6 +77,7 @@ export default function ComplaintViewCard(props) {
           </IconButton>
         }
         title={props.medium}
+        subheader={props.mode}
       ></CardHeader>
       <CardContent>
         <Typography variant="body3" color="textSecondary" component="p">

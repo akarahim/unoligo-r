@@ -11,15 +11,13 @@ import MenuList from '@material-ui/core/MenuList';
 
 const options = ['Closed', 'Pending', 'Escalated', 'Spam'];
 
-export default function SplitButton() {
+const SplitButton = () => {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef(null);
   const [selectedIndex, setSelectedIndex] = React.useState(1);
-
   const handleClick = () => {
-    console.info(`You clicked ${options[selectedIndex]}`);
+    console.log(`You clicked ${options[selectedIndex]}`);
   };
-
   const handleMenuItemClick = (event, index) => {
     setSelectedIndex(index);
     setOpen(false);
@@ -51,7 +49,7 @@ export default function SplitButton() {
           size="small"
           aria-controls={open ? 'split-button-menu' : undefined}
           aria-expanded={open ? 'true' : undefined}
-          aria-label="select merge strategy"
+          aria-label="select department"
           aria-haspopup="menu"
           onClick={handleToggle}
         >
@@ -94,4 +92,6 @@ export default function SplitButton() {
       </Popper>
     </>
   );
-}
+};
+
+export default SplitButton;
