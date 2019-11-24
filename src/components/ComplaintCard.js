@@ -25,6 +25,7 @@ import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import SentimentDissatisfiedIcon from '@material-ui/icons/SentimentDissatisfied';
 import SentimentVeryDissatisfiedIcon from '@material-ui/icons/SentimentVeryDissatisfied';
 import SplitButton from './SplitButton';
+import ChatIcon from '@material-ui/icons/Chat';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -84,7 +85,7 @@ export default function ComplaintViewCard(props) {
           {props.complaintText}
         </Typography>
         <Badge badgeContent={12} color="primary" className={classes.badge}>
-          <ViewHeadlineIcon />
+          <ChatIcon />
         </Badge>
       </CardContent>
       <CardActions>
