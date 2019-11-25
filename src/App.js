@@ -9,21 +9,24 @@ const renderCards = () =>
       complaintText:
         'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.',
       medium: 'Twitter',
-      mode: 'DM'
+      mode: 'DM',
+      threadCount: 11
     },
     {
       agent: 'NC',
       complaintText:
         'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.',
       medium: 'Facebook',
-      mode: 'DM'
+      mode: 'DM',
+      threadCount: 9
     },
     {
       agent: 'SM',
       complaintText:
         'Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.t',
       medium: 'GMB',
-      mode: 'Post'
+      mode: 'Post',
+      threadCount: 1
     }
   ].map(x => (
     <>

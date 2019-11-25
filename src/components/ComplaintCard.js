@@ -18,7 +18,6 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import HelpIcon from '@material-ui/icons/Help';
-import ViewHeadlineIcon from '@material-ui/icons/ViewHeadline';
 import Badge from '@material-ui/core/Badge';
 import NotInterestedIcon from '@material-ui/icons/NotInterested';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
@@ -84,7 +83,11 @@ export default function ComplaintViewCard(props) {
         <Typography variant="body3" color="textSecondary" component="p">
           {props.complaintText}
         </Typography>
-        <Badge badgeContent={12} color="primary" className={classes.badge}>
+        <Badge
+          badgeContent={props.threadCount}
+          color="primary"
+          className={classes.badge}
+        >
           <ChatIcon />
         </Badge>
       </CardContent>
